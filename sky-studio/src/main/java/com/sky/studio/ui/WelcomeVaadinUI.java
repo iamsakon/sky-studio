@@ -16,6 +16,7 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import com.vaadin.ui.VerticalLayout;
 import com.vaadin.ui.Button.ClickEvent;
+import com.vaadin.ui.ComboBox;
 
 @SuppressWarnings("serial")
 @Theme("skystudio")
@@ -43,7 +44,6 @@ public class WelcomeVaadinUI extends UI {
 		Label welcomeLabel = new Label("Welcome to Sky-Sutdio");
 		Label detailLabel = new Label("The Sky-Sutdio is a Project management tool");
 		Label emptyLine = new Label("");
-		Label selectProjectLabel = new Label("Please select project (or create)");
 		
 		
 		Button button = new Button("Create Project");
@@ -53,14 +53,15 @@ public class WelcomeVaadinUI extends UI {
 			}
 		});
 		
+		ComboBox projectCombobox = new ComboBox("--Please select project--");
+		
 		layout.addComponent(new Label("Session id : " + sessionId));
 		layout.addComponent(new Label("baseDir : " + baseDir.getAbsolutePath()));
 		
 		layout.addComponent(welcomeLabel);
 		layout.addComponent(detailLabel);
 		layout.addComponent(emptyLine);
-		layout.addComponent(selectProjectLabel);
-		
+		layout.addComponent(projectCombobox);
 		layout.addComponent(button);
 	}
 
