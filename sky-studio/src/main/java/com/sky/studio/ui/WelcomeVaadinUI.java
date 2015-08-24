@@ -4,6 +4,9 @@ import java.io.File;
 
 import javax.servlet.annotation.WebServlet;
 
+import com.sky.studio.entity.ProjectEntity;
+import com.vaadin.addon.jpacontainer.JPAContainer;
+import com.vaadin.addon.jpacontainer.JPAContainerFactory;
 import com.vaadin.annotations.Theme;
 import com.vaadin.annotations.VaadinServletConfiguration;
 import com.vaadin.server.Page;
@@ -21,6 +24,8 @@ import com.vaadin.ui.ComboBox;
 @SuppressWarnings("serial")
 @Theme("skystudio")
 public class WelcomeVaadinUI extends UI {
+	
+	private JPAContainer<ProjectEntity> projects = JPAContainerFactory.make(ProjectEntity.class,"skystudio");
 
 	@WebServlet(value = "/*", asyncSupported = true)
 	@VaadinServletConfiguration(productionMode = false, ui = WelcomeVaadinUI.class)
@@ -53,7 +58,8 @@ public class WelcomeVaadinUI extends UI {
 			}
 		});
 		
-		ComboBox projectCombobox = new ComboBox("--Please select project--");
+		ComboBox projectCombobox = new ComboBox("--Please select project--",projects);
+		projectCombobox.setItemCaptionPropertyId("name"); 
 		
 		layout.addComponent(new Label("Session id : " + sessionId));
 		layout.addComponent(new Label("baseDir : " + baseDir.getAbsolutePath()));
