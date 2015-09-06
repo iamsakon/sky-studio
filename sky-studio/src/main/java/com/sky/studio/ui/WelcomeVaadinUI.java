@@ -51,6 +51,7 @@ public class WelcomeVaadinUI extends UI {
 		Label emptyLine = new Label("");
 		
 		
+		
 		Button button = new Button("Create Project");
 		button.addClickListener(new Button.ClickListener() {
 			public void buttonClick(ClickEvent event) {
