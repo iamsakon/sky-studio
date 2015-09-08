@@ -5,13 +5,11 @@ import java.io.File;
 import com.sky.studio.entity.ProjectEntity;
 import com.vaadin.addon.jpacontainer.JPAContainer;
 import com.vaadin.addon.jpacontainer.JPAContainerFactory;
-import com.vaadin.annotations.DesignRoot;
 import com.vaadin.navigator.View;
 import com.vaadin.navigator.ViewChangeListener.ViewChangeEvent;
 import com.vaadin.server.VaadinService;
 import com.vaadin.server.VaadinSession;
 import com.vaadin.ui.VerticalLayout;
-import com.vaadin.ui.declarative.Design;
 
 import com.vaadin.ui.Button;
 import com.vaadin.ui.ComboBox;
